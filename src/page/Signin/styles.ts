@@ -8,13 +8,6 @@ export const Container = styled.div`
   align-items: stretch;
 
 
-  img {
-    width: 15rem;
-
-    @media (min-width: 900px) {
-
-    }
-  }
 `
 
 export const Content = styled.div`
@@ -22,12 +15,16 @@ export const Content = styled.div`
   flex-direction: column;
   align-items: center;
   place-content: center;
-  width: 100vw;
+  width: 100%;
+  max-width: 45rem;
+  padding: 3rem;
 
+    img {
+      width: 20rem;
+    }
 
   form {
     margin: 4rem 0;
-    width: 20rem;
     text-align: center;
 
     h1 {
@@ -71,14 +68,14 @@ export const Content = styled.div`
     }
 
     a {
-      color: #F4EDE8;
+      color: #02566F;
       display: block;
       margin-top: 1rem;
       text-decoration: none;
       transition: color 0.2s;
 
       &:hover {
-        color: ${shade(0.2, '#F4EDE8')}
+        color: ${shade(0.2, '#02566F')}
       }
     }
 
@@ -98,21 +95,12 @@ export const Content = styled.div`
         color: ${shade(0.2, '#ff9000')}
       }
   }
-
-  @media (min-width: 900px) {
-    max-width: 700px;
-  }
 `
 
 export const Background = styled.div`
-  display: none;
-
-  @media (min-width: 900px) {
-    display: flex;
-    background-color: green;
-    flex: 1;
-    background: url(${imagemLogin}) no-repeat center;
-    background-size: cover;
-  }
+  display: flex;
+  flex: 1;
+  background: url(${imagemLogin}) no-repeat center;
+  background-size: cover;
 
 `

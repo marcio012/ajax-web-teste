@@ -7,6 +7,7 @@ import logo from '../../assets/img/ajax.svg';
 export default function Signin() {
   return (
     <Container>
+      <Background />
       <Content>
         <img src={logo} alt="logo ajax" />
         <form>
@@ -25,7 +26,6 @@ export default function Signin() {
           Criar Conta
         </a>
       </Content>
-      <Background />
     </Container>
   );
 }
