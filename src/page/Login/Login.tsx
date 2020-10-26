@@ -11,13 +11,18 @@ import Input from '../../components/Input/Input';
 import Button from '../../components/Button/Button';
 import { AuthContext } from '../../context/ApiContext';
 
+interface LoginFormData {
+  email: string;
+  password: string;
+}
+
 export default function Login() {
   const formRef = useRef<FormHandles>(null);
 
   const { loginApi } = useContext(AuthContext);
 
   const handleSubmit = useCallback(
-    async (data: object) => {
+    async (data: LoginFormData) => {
       formRef.current?.setErrors({});
       try {
         const validation = Yup.object().shape({
@@ -31,7 +36,10 @@ export default function Login() {
           abortEarly: false,
         });
 
-        loginApi();
+        loginApi({
+          email: data.email,
+          password: data.password,
+        });
       } catch (error) {
         console.log('ERROR :>> ', error);
         const errors = getValidationErrors(error);
