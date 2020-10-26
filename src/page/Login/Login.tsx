@@ -19,7 +19,7 @@ interface LoginFormData {
 export default function Login() {
   const formRef = useRef<FormHandles>(null);
 
-  const { loginApi } = useContext(AuthContext);
+  const { user, loginApi } = useContext(AuthContext);
 
   const handleSubmit = useCallback(
     async (data: LoginFormData) => {
@@ -41,9 +41,13 @@ export default function Login() {
           password: data.password,
         });
       } catch (error) {
-        console.log('ERROR :>> ', error);
-        const errors = getValidationErrors(error);
-        formRef.current?.setErrors(errors);
+        if (error instanceof Yup.ValidationError) {
+          const errors = getValidationErrors(error);
+          formRef.current?.setErrors(errors);
+        }
+
+        
+
       }
     },
     [loginApi],

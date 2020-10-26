@@ -17,7 +17,8 @@ plugins:
   - react-hooks
   - "@typescript-eslint"
   - "prettier"
-rules: {
+rules:
+  {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
     "no-use-before-define": "off",
@@ -27,7 +28,6 @@ rules: {
     "react-hooks/exhaustive-deps": "warn",
     "eslint no-use-before-define": "off",
     "eslint operator-linebreak": " [ 'error', 'after']",
-    # "object-curly-newline": "off",
     "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
     "import/extensions":

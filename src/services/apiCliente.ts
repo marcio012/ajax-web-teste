@@ -4,4 +4,10 @@ const api = axios.create({
   baseURL: 'http://localhost:8080'
 })
 
-export default api;
+const config = {
+  headers: {
+    "Content-Type": "application/x-www-form-urlencoded",
+  },
+};
+
+export { api, config };
