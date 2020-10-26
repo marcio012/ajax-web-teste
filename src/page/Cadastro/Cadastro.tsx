@@ -4,6 +4,7 @@ import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import * as Yup from 'yup';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { Link } from 'react-router-dom';
 
 import { Container, Content, Background } from './styles';
 import logo from '../../assets/img/ajax.svg';
@@ -59,10 +60,10 @@ export default function Cadastro() {
           <Button>Cadastrar</Button>
         </Form>
 
-        <a href="login">
+        <Link to="/login">
           <FiArrowLeft />
           Voltar para Login
-        </a>
+        </Link>
       </Content>
     </Container>
   );

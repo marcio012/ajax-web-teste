@@ -4,6 +4,7 @@ import * as Yup from 'yup';
 import { FormHandles } from '@unform/core';
 import { Form } from '@unform/web';
 import getValidationErrors from '../../utils/getValidationErrors';
+import { Link } from 'react-router-dom';
 
 import { Container, Content, Background } from './styles';
 import logo from '../../assets/img/ajax.svg';
@@ -45,9 +46,6 @@ export default function Login() {
           const errors = getValidationErrors(error);
           formRef.current?.setErrors(errors);
         }
-
-        
-
       }
     },
     [loginApi],
@@ -69,10 +67,10 @@ export default function Login() {
           <a href="forgot">Esqueci minha senha</a>
         </Form>
 
-        <a href="login">
+        <Link to="/cadastar">
           <FiLogIn />
-          Criar Conta
-        </a>
+          Fazer Cadastro
+        </Link>
       </Content>
     </Container>
   );
