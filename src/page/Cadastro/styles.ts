@@ -6,8 +6,6 @@ export const Container = styled.div`
   height: 100vh;
   display: flex;
   align-items: stretch;
-
-
 `
 
 export const Content = styled.div`
@@ -19,52 +17,19 @@ export const Content = styled.div`
   max-width: 45rem;
   padding: 3rem;
 
-    img {
-      width: 20rem;
-    }
+  img {
+    margin-top: 2rem;
+    width: 18rem;
+  }
 
   form {
+
     margin: 4rem 0;
     text-align: center;
 
     h1 {
       margin-bottom: 3rem;
       color: #FE9000;
-
-    }
-
-    input {
-      background: #02566F;
-      border-radius: 10px;
-      border: 2px solid #023F52;
-      padding: 1.2rem;
-      width: 100%;
-      color: #F4EDE8;
-
-      &::placeholder {
-        color: #fff;
-      }
-
-      & + input {
-        margin-top: 0.87rem;
-      }
-    }
-
-    button {
-      background: #ff9000;
-      height: 3rem;
-      border-radius: .5rem;
-      border: 0;
-      padding: 0 1.2rem;
-      width: 100%;
-      color: #312e38;
-      margin-top: 1rem;
-      font-weight: 500;
-      transition: background-color 0.2s;
-
-      &:hover {
-        background: ${shade(0.2, '#ff9000')}
-      }
     }
 
     a {
@@ -78,6 +43,11 @@ export const Content = styled.div`
         color: ${shade(0.2, '#02566F')}
       }
     }
+
+    @media(min-width: 600px) {
+      width: 60%;
+    }
+
 
   }
   > a {

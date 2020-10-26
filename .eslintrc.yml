@@ -2,8 +2,8 @@ env:
   browser: true
   es6: true
 extends:
+  - "airbnb"
   - "plugin:react/recommended"
-  - airbnb
   - "plugin:@typescript-eslint/recommended"
 
 parser: "@typescript-eslint/parser"
@@ -17,14 +17,21 @@ plugins:
   - react-hooks
   - "@typescript-eslint"
   - "prettier"
-rules:
-  {
+rules: {
     "prettier/prettier": "error",
     "react-hooks/rules-of-hooks": "error",
+    "no-use-before-define": "off",
+    "react/require-default-props": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/jsx-props-no-spreading": "off",
     "react-hooks/exhaustive-deps": "warn",
-    "react/jsx-filename-extension": [1, { "extension": [".tsx"] }],
+    "eslint no-use-before-define": "off",
+    "eslint operator-linebreak": " [ 'error', 'after']",
+    # "object-curly-newline": "off",
+    "react/jsx-filename-extension": "off",
     "import/prefer-default-export": "off",
     "import/extensions":
       ["error", "ignorePackages", { "ts": "never", "tsx": "never" }],
+    "@typescript-eslint/explicit-module-boundary-types": "off",
   }
 settings: { "import/resolver": { "typescript": {} } }

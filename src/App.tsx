@@ -1,11 +1,16 @@
 import React from 'react';
-import Signin from './page/Signin/Signin';
+import Login from './page/Login/Login';
+
 import GloboStyle from './styles/global';
+
+import { AuthProvider } from './context/ApiContext';
 
 function App() {
   return (
     <>
-      <Signin />
+      <AuthProvider>
+        <Login />
+      </AuthProvider>
       <GloboStyle />
     </>
   );
